@@ -1,0 +1,15 @@
+.cart-right {
+    height: 25px;
+    padding-right: 10px;
+  }
+  
+  .derecha {
+    display: flex;
+    position: absolute;
+    right: 5vh;
+  }
+  .numero-cart {
+    margin: auto;
+    font-size: 0.7em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }

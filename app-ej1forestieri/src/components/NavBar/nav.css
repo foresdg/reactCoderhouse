@@ -1,0 +1,41 @@
+.menu {
+    width: 100%;
+  
+  }
+  
+  ul {
+    width: 100%;
+    overflow: hidden;
+    background-color: #1b9b39;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  
+  }
+  
+  ul li a {
+    float: right;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  
+  ul li a:hover {
+    background-color: #04a76b;
+    color: white;
+  }
+  
+.logoImagen {
+  
+    float:left;
+  }
