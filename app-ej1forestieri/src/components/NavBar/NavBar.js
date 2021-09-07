@@ -1,6 +1,7 @@
 import logo from './img/logo.png'
 import Cart from '../CartWidget/cartWidget.js'
 
+
 const NavBar = () => {
 
     return (
@@ -10,7 +11,7 @@ const NavBar = () => {
          <li><a href="#">Inicio</a></li>
          <li><a href="#">Sobre nosotros</a></li>
          <li><a href="#">Contacto</a></li>
-         <Cart />
+         <Cart contInicial="0" />
        </ul>
        
      </nav>

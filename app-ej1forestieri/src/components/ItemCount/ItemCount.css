@@ -1,0 +1,68 @@
+.container-contador {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: flex-end;
+    height: 250px;
+    width: 190px;
+    background-color: white;
+    border: 1px solid #04a76b;
+
+  }
+  
+  .contador {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    padding: 10px 20px;
+  }
+  
+  .h3-contador {
+    border-top: 1px solid #04a76b;
+    border-bottom: 1px solid #04a76b;
+    color: #282c34;
+    padding: 3px 8px;
+    margin: 0;
+    width: 50px;
+    font-family: 'Roboto', sans-serif; 
+    font-weight: 300;
+    font-size: 15px;
+  }
+  
+  .btn-contador {
+    border: 1px solid #04a76b;
+    border-radius: 50%;
+    background-color: white;
+    color: #282c34;
+    font-size: 16px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin: auto 10px;
+  }
+
+  .nombre-producto {
+
+    font-size: 20px;
+    color: #282c34;
+    margin: 0 0 10px 0;
+    font-family: 'Roboto', sans-serif; 
+    font-weight: 300;
+  }
+
+
+  .btn-addCarrito {
+    border: none;
+    background-color: #282c34;
+    color: white;
+    font-size: 16px;
+    width: 135px;
+    height: 30px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif; 
+    font-size: 13px;
+    font-weight: 500;
+    margin: 5px auto 10px;
+    
+  }

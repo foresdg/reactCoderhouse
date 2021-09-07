@@ -1,10 +1,19 @@
 import logo from './img/cw.png'
 
-const Cart = () => {
+function addProducts () {
+    
+}
+
+const Cart = (props) => {
+
+    const valorInicial = props.contInicial;
+
+
+
     return (
         <div className="derecha">
         <img src={logo} alt="logo-carrito" className="cart-right" />
-        <p className="numero-cart">0</p>
+        <p className="numero-cart">{valorInicial}</p>
         </div>
     )}
 

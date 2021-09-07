@@ -1,6 +1,7 @@
 @import url('./components/NavBar/nav.css');
 @import url('./components/CartWidget/cartWidget.css');
 @import url('./components/ItemListContainer/ItemListContainer.css');
+@import url('./components/ItemCount/ItemCount.css');
 
 .App {
   text-align: center;
@@ -40,22 +41,3 @@
     transform: rotate(360deg);
   }
 }
-
-/* itemlist progress */
-
-/* .main-itemlist {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  width: 85%;
-  height: 50vh;
-  margin: 10vh auto;
-  background-color:whitesmoke;
-}
-
-.main-itemlist h3 {
-  color: #282c34;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 20px;
-} */

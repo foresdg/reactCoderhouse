@@ -2,9 +2,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-  
+    align-items: center;
     width: 85%;
-    height: 50vh;
+    height: 65vh;
     margin: 10vh auto;
     background-color:whitesmoke;
   }
