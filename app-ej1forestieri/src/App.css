@@ -1,8 +1,8 @@
 @import url('./components/NavBar/nav.css');
 @import url('./components/CartWidget/cartWidget.css');
 @import url('./components/ItemListContainer/ItemListContainer.css');
-@import url('./components/ItemCount/ItemCount.css');
-
+@import url('./components/Item/Item.css');
+@import url('./components/ItemList/ItemList.css');
 .App {
   text-align: center;
 }
