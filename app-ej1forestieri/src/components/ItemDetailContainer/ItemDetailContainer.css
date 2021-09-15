@@ -1,0 +1,16 @@
+.main-itemlist {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    height: 80vh;
+    margin: auto;
+    background-color:whitesmoke;
+  }
+  
+  .main-itemlist h3 {
+    color: #282c34;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+  }

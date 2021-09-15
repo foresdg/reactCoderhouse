@@ -3,6 +3,10 @@
 @import url('./components/ItemListContainer/ItemListContainer.css');
 @import url('./components/Item/Item.css');
 @import url('./components/ItemList/ItemList.css');
+@import url('./components/ItemDetail/ItemDetail.css');
+@import url('./components/ItemDetailContainer/ItemDetailContainer.css');
+@import url('./components/ItemCountLight/ItemCountLight.css');
+
 .App {
   text-align: center;
 }
