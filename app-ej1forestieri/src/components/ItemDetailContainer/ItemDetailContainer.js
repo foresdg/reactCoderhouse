@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react'
-import ItemDetail from '../ItemDetail/ItemDetail.js'
+import Item from '../Item/Item.js'
+
 
 const tracks = [
     {id: 1, title: 'Space wrapper', price: 5, pictureUrl:'/img/1.jpg', descripcion: 'Un track de sonidos espaciales producido por XLR'},
@@ -30,13 +31,17 @@ function ItemDetailContainer () {
 
     }, [])
 
+    if(listaProductos.length === 0) {
+        return <h2>Cargando</h2>
+    }
+
     return(
 
         <div className="itemList-container">
 
             
 
-            {listaProductos.map(soundClip => <ItemDetail nombre={soundClip.title} precio={soundClip.price} image={soundClip.pictureUrl} descripcion={soundClip.descripcion} />)}
+            {listaProductos.map(soundClip => <Item nombre={soundClip.title} precio={soundClip.price} image={soundClip.pictureUrl} descripcion={soundClip.descripcion} />)}
 
         </div>
     

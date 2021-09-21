@@ -6,6 +6,7 @@
 @import url('./components/ItemDetail/ItemDetail.css');
 @import url('./components/ItemDetailContainer/ItemDetailContainer.css');
 @import url('./components/ItemCountLight/ItemCountLight.css');
+@import url('./components/Btn-det/Btn-Det.css');
 
 .App {
   text-align: center;
