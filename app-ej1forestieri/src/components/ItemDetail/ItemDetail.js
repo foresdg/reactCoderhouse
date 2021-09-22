@@ -1,22 +1,29 @@
 import ItemCountLight from '../ItemCountLight/ItemCountLight.js'
 
-const Item = (props) => {
+const ItemDetailSingle = (props) => {
 
 
     return (
-        <div className="container-card">
-            <img src={props.image}></img>
-            <h1 className="nombre-producto">{props.nombre}</h1>
-            <p>{props.descripcion}</p>
-            <div className="producto">
-                <h3 className="h3-producto">${props.precio}</h3>
+        <div className="container-tarj">
+            
+            <div className="seccion1">
+                <img src={props.image}></img>
+
             </div>
-            <ItemCountLight contInicial="1" />
+
+            <div className="seccion2">
+                <div className="producto-spc">
+                <h1 className="nombre-spc">{props.nombre}</h1>
+                <p>{props.descripcion}</p>            
+                    <h3 className="h3-spc">${props.precio}</h3>
+                    <ItemCountLight contInicial="1" />
+                </div>
+            </div>
         </div>
     )
 
 }
 
-export default Item;
+export default ItemDetailSingle;
 
 

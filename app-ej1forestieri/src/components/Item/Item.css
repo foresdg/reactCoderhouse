@@ -1,9 +1,8 @@
-.container-card {
+.container-tarjeta {
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: flex-end;
-    height: 250px;
     width: 190px;
     background-color: white;
     border: 1px solid #04a76b;

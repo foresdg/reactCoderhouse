@@ -16,7 +16,7 @@
   
   }
   
-  ul li a {
+  ul li {
     float: right;
     display: block;
     color: white;
@@ -30,7 +30,7 @@
     margin-bottom: auto;
   }
   
-  ul li a:hover {
+  ul li:hover {
     background-color: #04a76b;
     color: white;
   }
