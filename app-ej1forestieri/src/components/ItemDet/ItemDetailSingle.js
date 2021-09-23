@@ -3,7 +3,6 @@ import ItemDetail from '../ItemDetail/ItemDetail.js'
 
 
 
-
 function ItemDetailSingle (props) {
 
     const tracks = props.productos
@@ -18,7 +17,6 @@ function ItemDetailSingle (props) {
 
 
             <ItemDetail nombre={track.title} precio={track.price} image={track.pictureUrl} descripcion={track.descripcion} />
-
         </div>
     
         )

@@ -8,11 +8,11 @@ import ItemCategoryTrack from './components/ItemCategoryTrack/ItemCategoryTrack.
 import ItemCategorySoundFx from './components/ItemCategorySoundFx/ItemCategorySoundFx.js'
 
 const tracks = [
-  {id: '1', cat: 'song', title: 'Space wrapper', price: 5, pictureUrl:'/img/1.jpg', descripcion: 'Un track de sonidos espaciales producido por XLR', stock: 20},
-  {id: '2', cat: 'song', title: 'Sioux', price: 3, pictureUrl:'/img/2.jpg', descripcion: 'El protagonismo ambient con los pads de Brex22', stock: 14},
-  {id: '3', cat: 'song', title: 'PFL Track', price: 8, pictureUrl:'/img/3.jpg', descripcion: 'Otra descripción de un track aún mejor de XLR', stock: 16},
-  {id: '4', cat: 'soundfx', title: 'Quiet room', price: 2, pictureUrl:'/img/4.jpg', descripcion: 'Sonidos tribales para videos de tonos anaranjados', stock: 18},
-  {id: '5', cat: 'soundfx', title: 'DXL flute', price: 4, pictureUrl:'/img/5.jpg', descripcion: 'El nuevo ingreso a la colección de manos de AmbientMST', stock: 12}
+  {id: '1', cat: 'song', title: 'Space wrapper', price: 5, pictureUrl:'/img/1.jpg', descripcion: 'Un track de sonidos espaciales producido por XLR'},
+  {id: '2', cat: 'song', title: 'Sioux', price: 3, pictureUrl:'/img/2.jpg', descripcion: 'El protagonismo ambient con los pads de Brex22'},
+  {id: '3', cat: 'song', title: 'PFL Track', price: 8, pictureUrl:'/img/3.jpg', descripcion: 'Otra descripción de un track aún mejor de XLR'},
+  {id: '4', cat: 'soundfx', title: 'Quiet room', price: 2, pictureUrl:'/img/4.jpg', descripcion: 'Sonidos tribales para videos de tonos anaranjados'},
+  {id: '5', cat: 'soundfx', title: 'DXL flute', price: 4, pictureUrl:'/img/5.jpg', descripcion: 'El nuevo ingreso a la colección de manos de AmbientMST'}
 ];
 
 function App() {
