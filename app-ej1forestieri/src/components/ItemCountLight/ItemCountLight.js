@@ -4,7 +4,7 @@ const ItemCountLight = (props) => {
 
     const [contador, setContador] = useState (parseInt(props.contInicial));
 
-    function restaProducto () {
+    const restaProducto = () => {
         if (contador <= 0) {
             console.log('No puede comprar negativo')
         } else {
@@ -12,7 +12,7 @@ const ItemCountLight = (props) => {
         }
     };
 
-    function sumaProducto () {
+    const sumaProducto = () => {
 
         if (contador >= props.stock) {
             alert(`el stock disponible es de ${props.stock}`)
@@ -28,7 +28,7 @@ const ItemCountLight = (props) => {
                     <div className="div-contador"><p>{contador}</p></div>
                 <button className="btn-contador" onClick={sumaProducto}>+</button>              
             </div>
-            <button className="btn-addCarrito">Agregar al carrito</button>
+            <button className="btn-addCarrito" onClick={() => onConfirm(contador)}>Agregar al carrito</button>
         </div>
     )
 

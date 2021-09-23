@@ -1,5 +1,5 @@
 import {useParams} from 'react-router-dom'
-import ItemDetails from '../ItemDetail/ItemDetail.js'
+import ItemDetail from '../ItemDetail/ItemDetail.js'
 
 
 
@@ -17,7 +17,7 @@ function ItemDetailSingle (props) {
         <div className="itemList-container"> 
 
 
-            <ItemDetails nombre={track.title} precio={track.price} image={track.pictureUrl} descripcion={track.descripcion} />
+            <ItemDetail nombre={track.title} precio={track.price} image={track.pictureUrl} descripcion={track.descripcion} />
 
         </div>
     
