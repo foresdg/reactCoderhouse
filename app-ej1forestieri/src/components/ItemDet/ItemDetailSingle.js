@@ -10,7 +10,7 @@ function ItemDetailSingle (props) {
     const track = tracks.find(tr => tr.id === id)
 
 
-    console.log(track)
+    // console.log(track)
     return(
 
         <div className="itemList-container"> 

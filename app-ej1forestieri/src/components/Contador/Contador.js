@@ -1,20 +1,19 @@
 import { useState } from "react"
 
-const Contador = ({onConfirm, props}) => {
+const Contador = ({onConfirm}) => {
+   
     const [count, setCount] = useState(0)
     
 
     const handleRemove = () => {
         if(count > 0) {
             setCount(count - 1)
-            console.log('resta')
         }
     }
 
     const handleAdd = () => {
         if(count <= 1000) {
             setCount(count + 1)
-        // Se aplica el valor 1000 por tratarse de productos digitales
         }
     }
 

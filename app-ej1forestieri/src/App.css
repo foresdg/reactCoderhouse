@@ -9,6 +9,8 @@
 @import url('./components/Btn-det/Btn-Det.css');
 @import url('./components/ItemDet/ItemDetailSingle.css');
 @import url('./components/ItemDetail/ItemDetail.css');
+@import url('./components/Btn-terminarCompra/BtnTerminarCompra.css');
+@import url('./components/Cart/Cart.css');
 
 .App {
   text-align: center;

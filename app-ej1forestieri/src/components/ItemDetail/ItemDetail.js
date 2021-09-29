@@ -1,16 +1,21 @@
 import { useState } from 'react'
 import Contador from '../Contador/Contador'
-
+import BtnTerminar from '../Btn-terminarCompra/BtnTerminarCompra'
 
 const ItemDetail = (props) => {
     const [cantidad, setCantidad] = useState(0)
     console.log('cantidad almacenada: ' + cantidad)
     
-    const Count = Contador
+    const [cambio, setCambio] = useState(0)
+    const Bterminar = BtnTerminar
+    const Counter = cambio === 0 ? 
+    Contador : Bterminar
 
     const addToCart = (numberOfProductsAdd) => {
         console.log('agregado al carrito')
         setCantidad(numberOfProductsAdd)
+        console.log(cambio)
+        setCambio(1)
     }
 
     
@@ -27,7 +32,7 @@ const ItemDetail = (props) => {
                 <h1 className="nombre-spc">{props.nombre}</h1>
                 <p>{props.descripcion}</p>            
                     <h3 className="h3-spc">${props.precio}</h3>
-                    <Count onConfirm={addToCart} contInicial="2" stock={parseInt(props.stock)} />
+                    <Counter onConfirm={addToCart} stock={parseInt(props.stock)} />
                 </div>
             </div>
         </div>

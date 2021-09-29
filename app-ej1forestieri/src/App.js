@@ -6,6 +6,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import ItemDetailSingle from './components/ItemDet/ItemDetailSingle.js'
 import ItemCategoryTrack from './components/ItemCategoryTrack/ItemCategoryTrack.js';
 import ItemCategorySoundFx from './components/ItemCategorySoundFx/ItemCategorySoundFx.js'
+import Cart from './components/Cart/Cart'
 
 const tracks = [
   {id: '1', cat: 'song', title: 'Space wrapper', price: 5, pictureUrl:'/img/1.jpg', descripcion: 'Un track de sonidos espaciales producido por XLR'},
@@ -30,6 +31,7 @@ function App() {
                 <Route exact path='/item/:id'><ItemListContainer mostrar={<ItemDetailSingle productos={tracks} />} /></Route>
                 <Route exact path='/categoria/:song'><ItemListContainer mostrar={<ItemCategoryTrack tracks={tracks}/>} /></Route>
                 <Route exact path='/category/:soundfx'><ItemListContainer mostrar={<ItemCategorySoundFx tracks={tracks}/>} /></Route>
+                <Route exact path='/cart'><Cart /></Route>
 
             </Switch>
         </BrowserRouter>
