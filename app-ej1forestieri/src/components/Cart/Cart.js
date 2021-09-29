@@ -1,4 +1,9 @@
-function Cart () {
+import {UserContext} from 'react'
+import CartContext from '../../context/cartContext'
+
+const Cart = () => {
+
+    
 
 return(
 

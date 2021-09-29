@@ -7,7 +7,7 @@ const Item = (props) => {
 
         
         <div className="container-tarjeta">
-            <img src={props.image}></img>
+            <img src={props.image} alt="img-track"></img>
             <h1 className="nombre-producto">{props.nombre}</h1>
             <div className="producto">
                 <h3 className="h3-producto">${props.precio}</h3>
