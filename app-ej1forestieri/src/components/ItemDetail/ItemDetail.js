@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Contador from '../Contador/Contador'
 import BtnTerminar from '../Btn-terminarCompra/BtnTerminarCompra'
 
-const ItemDetail = (props) => {
+const ItemDetail = ({track}) => {
     const [cantidad, setCantidad] = useState(0)
     console.log('cantidad almacenada: ' + cantidad)
     
@@ -14,7 +14,7 @@ const ItemDetail = (props) => {
     const addToCart = (numberOfProductsAdd) => {
         console.log('agregado al carrito')
         setCantidad(numberOfProductsAdd)
-        console.log(cambio)
+        console.log(track.stock)
         setCambio(1)
     }
 
@@ -23,16 +23,16 @@ const ItemDetail = (props) => {
         <div className="container-tarj">
             
             <div className="seccion1">
-                <img src={props.image} alt="img"></img>
+                <img src={track.pictureUrl} alt="img"></img>
 
             </div>
 
             <div className="seccion2">
                 <div className="producto-spc">
-                <h1 className="nombre-spc">{props.nombre}</h1>
-                <p>{props.descripcion}</p>            
-                    <h3 className="h3-spc">${props.precio}</h3>
-                    <Counter onConfirm={addToCart} stock={parseInt(props.stock)} />
+                <h1 className="nombre-spc">{track.title}</h1>
+                <p>{track.descripcion}</p>            
+                    <h3 className="h3-spc">${track.price}</h3>
+                    <Counter onConfirm={addToCart} track={track} setCantidad={setCantidad} />
                 </div>
             </div>
         </div>

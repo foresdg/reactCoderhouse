@@ -1,20 +1,21 @@
 import logo from './img/cw.png'
-
-function addProducts () {
-    
-}
-
-const Cart = (props) => {
-
-    const valorInicial = props.contInicial;
+import {useContext} from 'react'
+import CartContext from '../../context/cartContext'
 
 
+
+const CartWidget = () => {
+
+    const { getQuantity, getProduct } = useContext(CartContext)
+
+    // {console.log(getProduct())}
 
     return (
         <div className="derecha">
         <img src={logo} alt="logo-carrito" className="cart-right" />
-        <p className="numero-cart">{valorInicial}</p>
+        <p className="numero-cart">{getQuantity()}</p>
         </div>
+
     )}
 
-export default Cart;
+export default CartWidget;

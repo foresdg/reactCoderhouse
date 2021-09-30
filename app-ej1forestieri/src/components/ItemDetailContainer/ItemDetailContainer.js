@@ -1,12 +1,12 @@
 import {useEffect, useState} from 'react'
 import Item from '../Item/Item.js'
 
-function ItemDetailContainer (props) {
+function ItemDetailContainer ({tracks}) {
 
     function getProductos() {
         return new Promise ((resolve, reject) => {
     
-            setTimeout(() => resolve(props.tracks), 2000)
+            setTimeout(() => resolve(tracks), 2000)
             })
     }
 

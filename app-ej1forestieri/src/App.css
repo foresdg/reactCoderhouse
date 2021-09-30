@@ -5,12 +5,12 @@
 @import url('./components/ItemList/ItemList.css');
 @import url('./components/ItemDetail/ItemDetail.css');
 @import url('./components/ItemDetailContainer/ItemDetailContainer.css');
-@import url('./components/ItemCountLight/ItemCountLight.css');
 @import url('./components/Btn-det/Btn-Det.css');
 @import url('./components/ItemDet/ItemDetailSingle.css');
 @import url('./components/ItemDetail/ItemDetail.css');
 @import url('./components/Btn-terminarCompra/BtnTerminarCompra.css');
 @import url('./components/Cart/Cart.css');
+@import url('./components/Contador/Contador.css');
 
 .App {
   text-align: center;
