@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter, Switch, Route} from 'react-router-dom'
-import { useState ,createContext, useEffect } from 'react';
+//  
 import NavBar from './components/NavBar/NavBar.js'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer.js'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
@@ -8,7 +8,6 @@ import ItemDetailSingle from './components/ItemDet/ItemDetailSingle.js'
 import ItemCategoryTrack from './components/ItemCategoryTrack/ItemCategoryTrack.js';
 import ItemCategorySoundFx from './components/ItemCategorySoundFx/ItemCategorySoundFx.js'
 import Cart from './components/Cart/Cart'
-import { UserContext } from './context/UserContext';
 import { CartCacheMask } from './context/cartContext';
 
 const tracks = [
@@ -21,21 +20,11 @@ const tracks = [
 
 function App() {
 
-  const [user, setUser] = useState('CoderUser')
-
-
-  useEffect(()=> {
-    setTimeout(()=> {
-      setUser('Agustin')
-    }, 3000)
-  }, [])
-
 
   return (
 
     <div className="App">
       <header className="App-header">
-      <UserContext.Provider value={user}>
         <CartCacheMask>
           <BrowserRouter>
             <NavBar />              
@@ -48,7 +37,6 @@ function App() {
                 </Switch>
           </BrowserRouter>
         </CartCacheMask>
-      </UserContext.Provider>
       </header>
     </div>
   );

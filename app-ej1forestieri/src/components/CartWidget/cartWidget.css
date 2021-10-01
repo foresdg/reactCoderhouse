@@ -13,3 +13,13 @@
     font-size: 0.7em;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
+
+  .clear-cart {
+    margin-left: 10px;
+    border: 1PX solid white;
+    background-color:transparent;
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+  }

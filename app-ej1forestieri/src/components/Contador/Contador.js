@@ -2,10 +2,10 @@ import {useState, useEffect, useContext} from 'react';
 import CartContext from '../../context/cartContext'
 
 
-const Contador = ({track, setCantidad}) => {
+const Contador = ({track}) => {
 
     const [quantity, setquantity] = useState ([])
-    const { addItem, isInCart, getProduct } = useContext(CartContext)
+    const { addItem, isInCart, getProduct, removeProduct } = useContext(CartContext)
 
     useEffect(() => {
         if(isInCart(track.id)) {
@@ -28,7 +28,7 @@ const Contador = ({track, setCantidad}) => {
 
     const restaProducto = () => {
         if (quantity <= 0) {
-            console.log('No puede comprar negativo')
+            console.log('No hay productos para agregar')
         } else {
             setquantity(quantity - 1)
         }
@@ -39,15 +39,24 @@ const Contador = ({track, setCantidad}) => {
         isInCart(track.id) ? alert("El producto ya fue agregado al carrito") : addItem(track, quantity)
     }
 
+    const eliminaProductoCarrito = () => {
+        removeProduct(track.id)
+    }
+
+    const valorInicial = quantity.length === 0 ? 0 : quantity
+
     return (
         <div className="container-contador">
             {/* <h1 className="nombre-producto">{track.nombre}</h1> */}
             <div className="contador">
                     <button className="btn-contador" onClick={restaProducto}>-</button>
-                    <h3 className="h3-contador">{quantity}</h3>                
+                    <h3 className="h3-contador">{valorInicial}</h3>                
                     <button className="btn-contador" onClick={sumaProducto}>+</button>                
             </div>
-            <button className="btn-addCarrito" onClick={()=>sumaProductoCarrito()}>Agregar al carrito</button>
+                <div className="botones-count">
+                    <button className="btn-addCarrito" onClick={()=>sumaProductoCarrito()}>Agregar al carrito</button>
+                    <button className="btn-addCarrito" onClick={()=>eliminaProductoCarrito()}>Eliminar del carrito</button>
+                </div>
         </div>
     )
 
