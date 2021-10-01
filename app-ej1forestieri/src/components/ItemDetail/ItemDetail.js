@@ -11,14 +11,6 @@ const ItemDetail = ({track}) => {
     const Counter = cambio === 0 ? 
     Contador : Bterminar
 
-    const addToCart = (numberOfProductsAdd) => {
-        console.log('agregado al carrito')
-        setCantidad(numberOfProductsAdd)
-        console.log(track.stock)
-        setCambio(1)
-    }
-
-    
     return (
         <div className="container-tarj">
             
@@ -32,7 +24,7 @@ const ItemDetail = ({track}) => {
                 <h1 className="nombre-spc">{track.title}</h1>
                 <p>{track.descripcion}</p>            
                     <h3 className="h3-spc">${track.price}</h3>
-                    <Counter onConfirm={addToCart} track={track} setCantidad={setCantidad} />
+                    <Counter track={track} setCantidad={setCantidad} />
                 </div>
             </div>
         </div>

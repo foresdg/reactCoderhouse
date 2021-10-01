@@ -6,9 +6,9 @@ import CartContext from '../../context/cartContext'
 
 const CartWidget = () => {
 
-    const { getQuantity, getProduct } = useContext(CartContext)
+    const { getQuantity } = useContext(CartContext)
 
-    // {console.log(getProduct())}
+    {console.log('esto es ' + getQuantity())}
 
     return (
         <div className="derecha">

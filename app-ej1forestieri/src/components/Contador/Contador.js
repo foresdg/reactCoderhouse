@@ -2,7 +2,7 @@ import {useState, useEffect, useContext} from 'react';
 import CartContext from '../../context/cartContext'
 
 
-const Contador = (track) => {
+const Contador = ({track, setCantidad}) => {
 
     const [quantity, setquantity] = useState ([])
     const { addItem, isInCart, getProduct } = useContext(CartContext)
@@ -20,7 +20,7 @@ const Contador = (track) => {
     const sumaProducto = () => {
 
         if (quantity >= track.stock) {
-            alert(`el stock disponible es de ${track.stock}`)
+            alert(`Disculpe, el stock disponible es de ${track.stock}`)
         } else {
             setquantity(quantity + 1)
         }        
@@ -35,9 +35,8 @@ const Contador = (track) => {
     }
 
     const sumaProductoCarrito = () => {
-        addItem(track, quantity)
-        setquantity(quantity)
-        console.log('este es el product >' + track.stock)
+        
+        isInCart(track.id) ? alert("El producto ya fue agregado al carrito") : addItem(track, quantity)
     }
 
     return (
