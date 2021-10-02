@@ -45,10 +45,10 @@ const Contador = ({track}) => {
 
     const eliminaProductoCarrito = () => {
         removeProduct(track.id)
+        setCambioBoton(1)
     }
 
     return (
-
         <div className="container-contador">
             <h1 className="nombre-producto">{track.nombre}</h1>
             <div className="contador">
