@@ -49,7 +49,8 @@ const Contador = ({track}) => {
     }
 
     return (
-        <div className="container-contador">
+    
+    <div className="container-contador">
             <h1 className="nombre-producto">{track.nombre}</h1>
             <div className="contador">
                     <button className="btn-contador" onClick={restaProducto}>-</button>
