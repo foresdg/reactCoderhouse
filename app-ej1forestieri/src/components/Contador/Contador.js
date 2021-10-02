@@ -1,11 +1,14 @@
 import {useState, useEffect, useContext} from 'react';
 import CartContext from '../../context/cartContext'
+import BtnTerminar from '../Btn-terminarCompra/BtnTerminarCompra';
 
 
-const Contador = ({track, agregar}) => {
+const Contador = ({track}) => {
+
 
     const [quantity, setquantity] = useState (0)
-    const { addItem, isInCart, getProduct, removeProduct } = useContext(CartContext)
+    const [cambioBoton, setCambioBoton] = useState(0)
+    const { addItem, isInCart, getProduct, removeProduct, getQuantity } = useContext(CartContext)
 
     useEffect(() => {
         if(isInCart(track.id)) {
@@ -37,7 +40,7 @@ const Contador = ({track, agregar}) => {
     const sumaProductoCarrito = () => {
         
         isInCart(track.id) ? alert("El producto ya fue agregado al carrito") : addItem(track, quantity);
-        agregar();
+        setCambioBoton(1)
     }
 
     const eliminaProductoCarrito = () => {
@@ -45,14 +48,15 @@ const Contador = ({track, agregar}) => {
     }
 
     return (
+
         <div className="container-contador">
-            {/* <h1 className="nombre-producto">{track.nombre}</h1> */}
+            <h1 className="nombre-producto">{track.nombre}</h1>
             <div className="contador">
                     <button className="btn-contador" onClick={restaProducto}>-</button>
                     <h3 className="h3-contador">{quantity}</h3>                
                     <button className="btn-contador" onClick={sumaProducto}>+</button>                
-            </div>
-                <div className="botones-count">
+        </div>
+        <div className="botones-count">
                     <button className="btn-addCarrito" onClick={()=>sumaProductoCarrito()}>Agregar al carrito</button>
                     <button className="btn-addCarrito" onClick={()=>eliminaProductoCarrito()}>Eliminar del carrito</button>
                 </div>

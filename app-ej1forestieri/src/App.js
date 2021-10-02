@@ -9,6 +9,8 @@ import ItemCategoryTrack from './components/ItemCategoryTrack/ItemCategoryTrack.
 import ItemCategorySoundFx from './components/ItemCategorySoundFx/ItemCategorySoundFx.js'
 import Cart from './components/Cart/Cart'
 import { CartCacheMask } from './context/cartContext';
+import { useContext, useState } from 'react';
+import cartContext from './context/cartContext'
 
 const tracks = [
   {id: '1', cat: 'song', title: 'Space wrapper', price: 5, pictureUrl:'/img/1.jpg', descripcion: 'Un track de sonidos espaciales producido por XLR', stock: 10},
@@ -19,6 +21,9 @@ const tracks = [
 
 
 function App() {
+
+  // const { getQuantity } = useContext(cartContext)
+  // const [itemsCart, setItemsCart] = useState(getQuantity())
 
 
   return (
