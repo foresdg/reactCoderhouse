@@ -9,7 +9,12 @@ const ItemDetail = ({track}) => {
     
     const {getQuantity} = useContext(cartContext)
 
-    const [cambio, setCambio] = useState(getQuantity)
+    const [cambio, setCambio] = useState(0)
+
+    const agregar = () => {
+        setCambio(1)
+    }
+
     const Bterminar = BtnTerminar
     const Counter = cambio <= 0 ? 
     Contador : Bterminar
@@ -27,7 +32,7 @@ const ItemDetail = ({track}) => {
                 <h1 className="nombre-spc">{track.title}</h1>
                 <p>{track.descripcion}</p>            
                     <h3 className="h3-spc">${track.price}</h3>
-                    <Counter track={track} />
+                    <Counter track={track} agregar={agregar()}/>
                 </div>
             </div>
         </div>
