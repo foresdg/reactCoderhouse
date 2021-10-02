@@ -10,7 +10,7 @@ import ItemCategorySoundFx from './components/ItemCategorySoundFx/ItemCategorySo
 import Cart from './components/Cart/Cart'
 import { CartCacheMask } from './context/cartContext';
 import { useContext, useState } from 'react';
-import cartContext from './context/cartContext'
+import CartContext from './context/cartContext'
 
 const tracks = [
   {id: '1', cat: 'song', title: 'Space wrapper', price: 5, pictureUrl:'/img/1.jpg', descripcion: 'Un track de sonidos espaciales producido por XLR', stock: 10},
@@ -22,17 +22,16 @@ const tracks = [
 
 function App() {
 
-  // const { getQuantity } = useContext(cartContext)
-  // const [itemsCart, setItemsCart] = useState(getQuantity())
 
-
+  const [widgetChange, setWidgetChange] = useState()
+  
   return (
 
     <div className="App">
       <header className="App-header">
         <CartCacheMask>
           <BrowserRouter>
-            <NavBar />              
+            <NavBar widgetChange={widgetChange} setWidgetChange={setWidgetChange}/>              
                 <Switch>
                     <Route exact path='/'><ItemListContainer mostrar={<ItemDetailContainer tracks={tracks}/>} /></Route>
                     <Route exact path='/item/:id'><ItemListContainer mostrar={<ItemDetailSingle tracks={tracks} />} /></Route>

@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom'
 import { useContext, useState } from 'react'
 import cartContext from '../../context/cartContext'
 
-const NavBar = () => {
+const NavBar = ({widgetChange, setWidgetChange}) => {
 
-  const {getQuantity} = useContext(cartContext)
-  const [carritoVisible, setCarritoVisible] = useState(getQuantity)
+  const { getQuantity } = useContext(cartContext)
+  const [carritoVisible, setCarritoVisible] = useState(getQuantity())
+
 
     return (
     <nav className="menu">
@@ -20,10 +21,11 @@ const NavBar = () => {
          
          <Link exact to='/category/:soundfx'><li>Efectos de sonido</li></Link>
          
-        <CartWidget />
+         {(getQuantity() > 0) && <CartWidget /> }
        </ul>
        
      </nav>
     )}
 
 export default NavBar;
+

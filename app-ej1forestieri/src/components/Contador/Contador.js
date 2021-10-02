@@ -3,7 +3,7 @@ import CartContext from '../../context/cartContext'
 import BtnTerminar from '../Btn-terminarCompra/BtnTerminarCompra';
 
 
-const Contador = ({track}) => {
+const Contador = ({track, setCambio}) => {
 
 
     const [quantity, setquantity] = useState (0)
@@ -40,7 +40,7 @@ const Contador = ({track}) => {
     const sumaProductoCarrito = () => {
         
         isInCart(track.id) ? alert("El producto ya fue agregado al carrito") : addItem(track, quantity);
-        setCambioBoton(1)
+        setCambio(1)
     }
 
     const eliminaProductoCarrito = () => {

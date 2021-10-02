@@ -6,16 +6,16 @@ import { Link } from 'react-router-dom'
 
 const CartWidget = () => {
 
+
     const { getQuantity } = useContext(CartContext)
 
-    {console.log('esto es ' + getQuantity())}
-
     return (
+
         <div className="derecha">
         <Link exact to='/cart'><img src={logo} alt="logo-carrito" className="cart-right" /></Link>
-        <p className="numero-cart">{getQuantity()}</p>
-        </div>
-
-    )}
+        <p className="numero-cart">{getQuantity()}</p></div>
+    )
+   }
 
 export default CartWidget;
+

@@ -12,6 +12,7 @@ const ItemDetail = ({track}) => {
     const [cambio, setCambio] = useState(0)
 
 
+
     const Bterminar = BtnTerminar
     const Counter = cambio <= 0 ? 
     Contador : Bterminar
@@ -29,7 +30,7 @@ const ItemDetail = ({track}) => {
                 <h1 className="nombre-spc">{track.title}</h1>
                 <p>{track.descripcion}</p>            
                     <h3 className="h3-spc">${track.price}</h3>
-                    <Counter track={track} />
+                    <Counter track={track} setCambio={setCambio} />
                 </div>
             </div>
         </div>
