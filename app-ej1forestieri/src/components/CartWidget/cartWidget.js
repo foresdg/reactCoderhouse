@@ -1,24 +1,19 @@
 import logo from './img/cw.png'
 import {useContext} from 'react'
 import CartContext from '../../context/cartContext'
-
+import { Link } from 'react-router-dom'
 
 
 const CartWidget = () => {
 
-    const { getQuantity, clearCart } = useContext(CartContext)
+    const { getQuantity } = useContext(CartContext)
 
     {console.log('esto es ' + getQuantity())}
 
-    const limpiaCarrito = () => {
-        clearCart()
-    }
-
     return (
         <div className="derecha">
-        <img src={logo} alt="logo-carrito" className="cart-right" />
+        <Link exact to='/cart'><img src={logo} alt="logo-carrito" className="cart-right" /></Link>
         <p className="numero-cart">{getQuantity()}</p>
-        <button className="clear-cart" onClick={()=>limpiaCarrito()}>VACIAR</button>
         </div>
 
     )}

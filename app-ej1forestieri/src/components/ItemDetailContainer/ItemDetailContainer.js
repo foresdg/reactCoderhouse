@@ -6,7 +6,7 @@ function ItemDetailContainer ({tracks}) {
     function getProductos() {
         return new Promise ((resolve, reject) => {
     
-            setTimeout(() => resolve(tracks), 2000)
+            setTimeout(() => resolve(tracks), 500)
             })
     }
 

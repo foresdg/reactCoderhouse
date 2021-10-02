@@ -1,9 +1,13 @@
 import logo from './img/logo.png'
-import Cart from '../CartWidget/cartWidget.js'
+import CartWidget from '../CartWidget/cartWidget.js'
 import { Link } from 'react-router-dom'
-
+import { useContext, useState } from 'react'
+import cartContext from '../../context/cartContext'
 
 const NavBar = () => {
+
+  const {getQuantity} = useContext(cartContext)
+  const [carritoVisible, setCarritoVisible] = useState(getQuantity)
 
     return (
     <nav className="menu">
@@ -16,7 +20,7 @@ const NavBar = () => {
          
          <Link exact to='/category/:soundfx'><li>Efectos de sonido</li></Link>
          
-         <Cart contInicial="0" />
+        <CartWidget />
        </ul>
        
      </nav>

@@ -5,3 +5,40 @@
     width: 100%;
     background-color: whitesmoke;
 }
+
+.cartList-container-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    height: 80vh;
+    margin: auto;
+    background-color:whitesmoke;
+}
+
+.cartList-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    height: 80vh;
+    margin: auto;
+    background-color:whitesmoke;
+}
+
+.btn-general {
+    border: none;
+    background-color: #282c34;
+    color: white;
+    font-size: 16px;
+    width: 135px;
+    height: 30px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif; 
+    font-size: 13px;
+    font-weight: 500;
+    margin: 5px auto 10px;
+    
+  }

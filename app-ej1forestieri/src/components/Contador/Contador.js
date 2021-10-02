@@ -4,7 +4,7 @@ import CartContext from '../../context/cartContext'
 
 const Contador = ({track}) => {
 
-    const [quantity, setquantity] = useState ([])
+    const [quantity, setquantity] = useState (0)
     const { addItem, isInCart, getProduct, removeProduct } = useContext(CartContext)
 
     useEffect(() => {
@@ -43,14 +43,12 @@ const Contador = ({track}) => {
         removeProduct(track.id)
     }
 
-    const valorInicial = quantity.length === 0 ? 0 : quantity
-
     return (
         <div className="container-contador">
             {/* <h1 className="nombre-producto">{track.nombre}</h1> */}
             <div className="contador">
                     <button className="btn-contador" onClick={restaProducto}>-</button>
-                    <h3 className="h3-contador">{valorInicial}</h3>                
+                    <h3 className="h3-contador">{quantity}</h3>                
                     <button className="btn-contador" onClick={sumaProducto}>+</button>                
             </div>
                 <div className="botones-count">
