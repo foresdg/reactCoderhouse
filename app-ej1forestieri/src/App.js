@@ -10,14 +10,13 @@ import ItemCategorySoundFx from './components/ItemCategorySoundFx/ItemCategorySo
 import Cart from './components/Cart/Cart'
 import { CartCacheMask } from './context/cartContext';
 import { useContext, useState } from 'react';
-import CartContext from './context/cartContext'
 
-const tracks = [
-  {id: '1', cat: 'song', title: 'Space wrapper', price: 5, pictureUrl:'/img/1.jpg', descripcion: 'Un track de sonidos espaciales producido por XLR', stock: 10},
-  {id: '2', cat: 'song', title: 'Sioux', price: 3, pictureUrl:'/img/2.jpg', descripcion: 'El protagonismo ambient con los pads de Brex22', stock: 10},
-  {id: '3', cat: 'song', title: 'PFL Track', price: 8, pictureUrl:'/img/3.jpg', descripcion: 'Otra descripción de un track aún mejor de XLR', stock: 10},
-  {id: '4', cat: 'soundfx', title: 'Quiet room', price: 2, pictureUrl:'/img/4.jpg', descripcion: 'Sonidos tribales para videos de tonos anaranjados', stock: 10},
-  {id: '5', cat: 'soundfx', title: 'DXL flute', price: 4, pictureUrl:'/img/5.jpg', descripcion: 'El nuevo ingreso a la colección de manos de AmbientMST', stock: 10}];
+// const tracks = [
+//   {id: '1', category: 'song', title: 'Space wrapper', price: 5, pictureUrl:'/img/1.jpg', descripcion: 'Un track de sonidos espaciales producido por XLR', stock: 10},
+//   {id: '2', category: 'song', title: 'Sioux', price: 3, pictureUrl:'/img/2.jpg', descripcion: 'El protagonismo ambient con los pads de Brex22', stock: 10},
+//   {id: '3', category: 'song', title: 'PFL Track', price: 8, pictureUrl:'/img/3.jpg', descripcion: 'Otra descripción de un track aún mejor de XLR', stock: 10},
+//   {id: '4', category: 'soundfx', title: 'Quiet room', price: 2, pictureUrl:'/img/4.jpg', descripcion: 'Sonidos tribales para videos de tonos anaranjados', stock: 10},
+//   {id: '5', category: 'soundfx', title: 'DXL flute', price: 4, pictureUrl:'/img/5.jpg', descripcion: 'El nuevo ingreso a la colección de manos de AmbientMST', stock: 10}];
 
 
 function App() {
@@ -33,10 +32,10 @@ function App() {
           <BrowserRouter>
             <NavBar widgetChange={widgetChange} setWidgetChange={setWidgetChange}/>              
                 <Switch>
-                    <Route exact path='/'><ItemListContainer mostrar={<ItemDetailContainer tracks={tracks}/>} /></Route>
-                    <Route exact path='/item/:id'><ItemListContainer mostrar={<ItemDetailSingle tracks={tracks} />} /></Route>
+                    <Route exact path='/'><ItemListContainer mostrar={<ItemDetailContainer />} /></Route>
+                    {/* <Route exact path='/item/:id'><ItemListContainer mostrar={<ItemDetailSingle tracks={tracks} />} /></Route>
                     <Route exact path='/categoria/:song'><ItemListContainer mostrar={<ItemCategoryTrack tracks={tracks}/>} /></Route>
-                    <Route exact path='/category/:soundfx'><ItemListContainer mostrar={<ItemCategorySoundFx tracks={tracks}/>} /></Route>
+                    <Route exact path='/category/:soundfx'><ItemListContainer mostrar={<ItemCategorySoundFx tracks={tracks}/>} /></Route> */}
                     <Route exact path='/cart'><Cart /></Route>
                 </Switch>
           </BrowserRouter>

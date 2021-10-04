@@ -28,4 +28,3 @@ const NavBar = ({widgetChange, setWidgetChange}) => {
     )}
 
 export default NavBar;
-
