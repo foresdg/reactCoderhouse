@@ -17,7 +17,7 @@ const NavBar = ({widgetChange, setWidgetChange}) => {
          
          <Link exact to='/'><li>Inicio</li></Link>
          
-         <Link exact to='/categoria/:song'><li>Tracks</li></Link>
+         <Link exact to='/category/:song'><li>Tracks</li></Link>
          
          <Link exact to='/category/:soundfx'><li>Efectos de sonido</li></Link>
          

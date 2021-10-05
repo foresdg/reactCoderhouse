@@ -32,7 +32,7 @@ const Cart = () => {
 
         <div className="cartList-container">
 
-            {listaProductos.map(soundClip => <CartItem nombre={soundClip.title} precio={soundClip.price} image={soundClip.pictureUrl} descripcion={soundClip.descripcion} id={soundClip.id} quantity={soundClip.quantity} />)}
+            {listaProductos.map(soundClip => <CartItem nombre={soundClip.title} precio={soundClip.price} image={soundClip.img} descripcion={soundClip.descripcion} id={soundClip.id} quantity={soundClip.quantity} />)}
             
             <div>
                 <h2>Total ${getTotal()}</h2>

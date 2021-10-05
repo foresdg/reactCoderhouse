@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
-import Item from '../Item/Item.js'
+import ItemDetail from '../ItemDetail/ItemDetail'
 import { db } from '../../services/firebase'
 import { doc, getDoc } from 'firebase/firestore'
 
@@ -17,8 +17,8 @@ function ItemDetailContainer () {
         setLoading(true)
         getDoc(doc(db, 'elementos' , itemid)).then((querySnapshot) => {
             const product = { id: querySnapshot.id, ...querySnapshot.data()}
-            console.log(product)
             setProduct(product)
+            console.log(product)
         }).catch((error) => {
             console.log('Error searching intems', error)
         }).finally(() => {
@@ -32,9 +32,9 @@ function ItemDetailContainer () {
 
     return(
 
-        <div className="itemList-container">
+        <div className="main-itemlist">
 
-            {loading ? 'loading...' : <Item product={product} />}
+            {loading ? 'loading...' : <ItemDetail product={product} />}
 
         </div>
     

@@ -3,7 +3,7 @@ import Contador from '../Contador/Contador'
 import BtnTerminar from '../Btn-terminarCompra/BtnTerminarCompra'
 import cartContext from '../../context/cartContext'
 
-const ItemDetail = ({track}) => {
+const ItemDetail = ({product}) => {
     const [cantidad, setCantidad] = useState(0)
     console.log('cantidad almacenada: ' + cantidad)
     
@@ -17,20 +17,22 @@ const ItemDetail = ({track}) => {
     const Counter = cambio <= 0 ? 
     Contador : Bterminar
 
+    console.log(product)
+
     return (
         <div className="container-tarj">
             
             <div className="seccion1">
-                <img src={track.pictureUrl} alt="img"></img>
+                <img src={product.img} alt="img"></img>
 
             </div>
 
             <div className="seccion2">
                 <div className="producto-spc">
-                <h1 className="nombre-spc">{track.title}</h1>
-                <p>{track.descripcion}</p>            
-                    <h3 className="h3-spc">${track.price}</h3>
-                    <Counter track={track} setCambio={setCambio} />
+                <h1 className="nombre-spc">{product.title}</h1>
+                <p>{product.description}</p>            
+                    <h3 className="h3-spc">${product.price}</h3>
+                    <Counter track={product} setCambio={setCambio} />
                 </div>
             </div>
         </div>
