@@ -1,8 +1,8 @@
 import {Link} from 'react-router-dom'
 
-function BtnDet (props) {
+function BtnDet ({product}) {
 
-return <Link to={props.enlace}><button className="btn-detalles">Ver detalles</button></Link>
+return <Link to='/item/:itemid'><button className="btn-detalles">Ver detalles</button></Link>
 }
 
 export default BtnDet

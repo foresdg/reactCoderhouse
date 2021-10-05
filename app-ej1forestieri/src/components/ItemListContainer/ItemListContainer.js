@@ -1,10 +1,13 @@
-const ItemList = (props) => {
+import ItemList from '../ItemList/ItemList'
+
+const ItemListContainer = () => {
     return (
 
         <div className="main-itemlist">
-            <div>{props.mostrar}</div>
+            <ItemList />
+            {/* <div>{props.mostrar}</div> */}
         </div>
 
     )};
 
-export default ItemList;
+export default ItemListContainer;

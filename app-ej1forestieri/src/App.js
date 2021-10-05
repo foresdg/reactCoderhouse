@@ -4,12 +4,10 @@ import { BrowserRouter, Switch, Route} from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar.js'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer.js'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
-import ItemDetailSingle from './components/ItemDet/ItemDetailSingle.js'
-import ItemCategoryTrack from './components/ItemCategoryTrack/ItemCategoryTrack.js';
-import ItemCategorySoundFx from './components/ItemCategorySoundFx/ItemCategorySoundFx.js'
 import Cart from './components/Cart/Cart'
 import { CartCacheMask } from './context/cartContext';
 import { useContext, useState } from 'react';
+import ItemList from './components/ItemListContainer/ItemListContainer.js';
 
 // const tracks = [
 //   {id: '1', category: 'song', title: 'Space wrapper', price: 5, pictureUrl:'/img/1.jpg', descripcion: 'Un track de sonidos espaciales producido por XLR', stock: 10},
@@ -32,7 +30,12 @@ function App() {
           <BrowserRouter>
             <NavBar widgetChange={widgetChange} setWidgetChange={setWidgetChange}/>              
                 <Switch>
-                    <Route exact path='/'><ItemListContainer mostrar={<ItemDetailContainer />} /></Route>
+                    <Route exact path='/'>
+                        <ItemListContainer />
+                    </Route>
+                    <Route path='/item/:itemid'>
+                        <ItemDetailContainer />
+                    </Route>
                     {/* <Route exact path='/item/:id'><ItemListContainer mostrar={<ItemDetailSingle tracks={tracks} />} /></Route>
                     <Route exact path='/categoria/:song'><ItemListContainer mostrar={<ItemCategoryTrack tracks={tracks}/>} /></Route>
                     <Route exact path='/category/:soundfx'><ItemListContainer mostrar={<ItemCategorySoundFx tracks={tracks}/>} /></Route> */}
