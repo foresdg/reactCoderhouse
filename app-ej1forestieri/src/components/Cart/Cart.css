@@ -19,7 +19,7 @@
 
 .cartList-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 85%;
@@ -28,9 +28,19 @@
     background-color:whitesmoke;
 }
 
+.actions-container {
+    display: flex;
+    flex-direction: column;
+    width: 40vh;
+    align-items: center;
+    border-left: 1px solid #04a76b;
+    margin-left: 60px;
+    padding-left: 60px;
+}
+
 .final {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
 }
 

@@ -7,6 +7,7 @@ import {
     Timestamp, writeBatch 
 } from 'firebase/firestore'
 import { db } from '../../services/firebase'
+import Form from '../Form/Form'
 
 
 const Cart = () => {
@@ -15,7 +16,19 @@ const Cart = () => {
     const [listaProductos, setListaProductos] = useState(products)
     const [total, setTotal] = useState()
     const [processingOrder, setProcessingOrder] = useState(false)
+    const [datosUsuario, setDatosUsuario] = useState({
+        nombre:'',
+        telefono:'',
+        email:''
+    })
 
+    const handleInputChange = (event) => {
+        setDatosUsuario({
+            ...datosUsuario,
+            [event.target.name] : event.target.value
+
+        })
+    }
 
     useEffect(() => {
         setTotal(getTotal())
@@ -30,8 +43,10 @@ const Cart = () => {
     const finalizar = () => {
 
 
+
+
         const orden = {
-            buyer: 'user',
+            buyer: datosUsuario,
             items: products,
             total: total,
             date: Timestamp.fromDate(new Date())
@@ -56,17 +71,16 @@ const Cart = () => {
         if(sinStock.length === 0) {
             addDoc(collection(db, 'pedidos'), orden).then(() => {
                 lote.commit().then(() => {
-                    console.log('Orden exitosa')
+                    console.log('Pedido exitoso')
                 })
             }).catch((error) => {
-                console.log('Error de ejecución')
+                console.log('Error en el pedido')
             }).finally(() => {
                 setProcessingOrder(false)
                 clearCart()
                 setTotal(0)
             })
         }
-
     }
 
     if (listaProductos.length === 0) {
@@ -87,21 +101,23 @@ const Cart = () => {
 
             <div className="productRow">
             {listaProductos.map(prod => <CartItem nombre={prod.title} precio={prod.price} image={prod.img} descripcion={prod.descripcion} id={prod.id} quantity={prod.quantity} />)}
-            
             </div>
-            <form>
-                <h2>Por favor, ingrese sus datos para completar la compra</h2>
-                <input type="text" placeholder="Nombre y Apellido" className="campo-form"></input>
-                <input type="text" placeholder="Teléfono" className="campo-form"></input>
-                <input type="text" placeholder="Email" className="campo-form"></input>
-            </form>
+
+            <div className="actions-container">
+            <h2>Por favor, ingrese sus datos para completar la compra</h2>
+                <form>
+                <input type="text" placeholder="Nombre y Apellido" className="campo-form" name="nombre" onChange={handleInputChange} />
+                <input type="text" placeholder="Teléfono" className="campo-form" name="telefono" onChange={handleInputChange} />
+                <input type="text" placeholder="Email" className="campo-form" name="email" onChange={handleInputChange} />
+                </form>
 
             <div className="final">
                 <h2>Total ${getTotal()}</h2>
+                <button className="btn-general"onClick={()=>finalizar()}>FINALIZAR COMPRA</button>
                 <button className="btn-general" onClick={()=>vaciaCarrito()}>Vaciar Carrito</button>
-                {/* <button className="btn-general"onClick={()=>finalizar()}>FINALIZAR COMPRA</button></div> */}
-                </div>
-        
+                
+            </div> </div>
+            
         </div>        
     )
 }
