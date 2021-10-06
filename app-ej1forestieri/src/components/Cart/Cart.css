@@ -19,13 +19,24 @@
 
 .cartList-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 85%;
     height: 80vh;
     margin: auto;
     background-color:whitesmoke;
+}
+
+.final {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.productRow {
+    display: flex;
+    flex-direction: row;
 }
 
 .btn-general {
@@ -39,6 +50,32 @@
     font-family: 'Roboto', sans-serif; 
     font-size: 13px;
     font-weight: 500;
-    margin: 5px auto 10px;
+    margin: 5px 5px 10px 5px;
     
   }
+
+.botonesCart {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 20px 10px 20px;
+}
+
+.campo-form {
+    padding: 10px;
+    border: 1px solid #04a76b;
+    margin: 10px;
+    text-align: center;
+}
+
+.cart-product {
+    color: whitesmoke;
+}
+
+form h2 {
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+.cart-product h3 {
+    color: red;
+}

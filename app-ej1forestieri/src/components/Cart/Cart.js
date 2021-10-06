@@ -1,20 +1,73 @@
 import CartItem from '../CartItem/CartItem'
-import {useContext, useEffect, useState} from 'react'
+import {useContext, useState, useEffect} from 'react'
 import cartContext from '../../context/cartContext'
 import {Link} from 'react-router-dom'
+import { 
+    collection, addDoc, getDoc, doc ,
+    Timestamp, writeBatch 
+} from 'firebase/firestore'
+import { db } from '../../services/firebase'
+
 
 const Cart = () => {
 
     const {products, getTotal, clearCart} = useContext(cartContext)
-    console.log(products)
-
     const [listaProductos, setListaProductos] = useState(products)
+    const [total, setTotal] = useState()
+    const [processingOrder, setProcessingOrder] = useState(false)
+
+
+    useEffect(() => {
+        setTotal(getTotal())
+    }, [getTotal])
 
     const vaciaCarrito = () => {
         clearCart()
         setListaProductos([])
     }
 
+
+    const finalizar = () => {
+
+
+        const orden = {
+            buyer: 'user',
+            items: products,
+            total: total,
+            date: Timestamp.fromDate(new Date())
+        }
+                    
+        const lote = writeBatch(db)
+        const sinStock = []
+            
+        orden.items.forEach((prod, i) => {
+            getDoc(doc(db, 'elementos', prod.id)).then(DocumentSnapshot => {
+                if(DocumentSnapshot.data().stock >= orden.items[i].quantity) {
+                    lote.update(doc(db, 'elementos', DocumentSnapshot.id), {
+                        stock: DocumentSnapshot.data().stock - orden.items[i].quantity
+                    })
+                } else {
+                    sinStock.push({...DocumentSnapshot.data(), id: DocumentSnapshot.id})
+                }
+                    
+            })
+        })
+
+        if(sinStock.length === 0) {
+            addDoc(collection(db, 'pedidos'), orden).then(() => {
+                lote.commit().then(() => {
+                    console.log('Orden exitosa')
+                })
+            }).catch((error) => {
+                console.log('Error de ejecución')
+            }).finally(() => {
+                setProcessingOrder(false)
+                clearCart()
+                setTotal(0)
+            })
+        }
+
+    }
 
     if (listaProductos.length === 0) {
       
@@ -32,11 +85,21 @@ const Cart = () => {
 
         <div className="cartList-container">
 
-            {listaProductos.map(soundClip => <CartItem nombre={soundClip.title} precio={soundClip.price} image={soundClip.img} descripcion={soundClip.descripcion} id={soundClip.id} quantity={soundClip.quantity} />)}
+            <div className="productRow">
+            {listaProductos.map(prod => <CartItem nombre={prod.title} precio={prod.price} image={prod.img} descripcion={prod.descripcion} id={prod.id} quantity={prod.quantity} />)}
             
-            <div>
+            </div>
+            <form>
+                <h2>Por favor, ingrese sus datos para completar la compra</h2>
+                <input type="text" placeholder="Nombre y Apellido" className="campo-form"></input>
+                <input type="text" placeholder="Teléfono" className="campo-form"></input>
+                <input type="text" placeholder="Email" className="campo-form"></input>
+            </form>
+
+            <div className="final">
                 <h2>Total ${getTotal()}</h2>
                 <button className="btn-general" onClick={()=>vaciaCarrito()}>Vaciar Carrito</button>
+                {/* <button className="btn-general"onClick={()=>finalizar()}>FINALIZAR COMPRA</button></div> */}
                 </div>
         
         </div>        
