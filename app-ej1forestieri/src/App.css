@@ -12,6 +12,7 @@
 @import url('./components/Cart/Cart.css');
 @import url('./components/Contador/Contador.css');
 @import url('./components/CartItem/CartItem.css');
+@import url('./components/FinCompra/FinCompra.css');
 
 .App {
   text-align: center;

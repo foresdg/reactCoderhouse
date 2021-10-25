@@ -17,10 +17,6 @@ const NavBar = ({widgetChange, setWidgetChange}) => {
          
          <Link exact to='/'><li>Inicio</li></Link>
          
-         <Link to='/category/:song'><li>Tracks</li></Link>
-         
-         <Link to='/category/:soundfx'><li>Efectos de sonido</li></Link>
-         
          {(getQuantity() > 0) && <CartWidget /> }
        </ul>
        

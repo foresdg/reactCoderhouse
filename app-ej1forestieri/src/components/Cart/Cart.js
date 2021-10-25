@@ -7,7 +7,7 @@ import {
     Timestamp, writeBatch 
 } from 'firebase/firestore'
 import { db } from '../../services/firebase'
-import Form from '../Form/Form'
+import FinCompra from '../FinCompra/FinCompra'
 
 
 const Cart = () => {
@@ -81,6 +81,10 @@ const Cart = () => {
                 setTotal(0)
             })
         }
+
+        return <FinCompra />
+
+
     }
 
     if (listaProductos.length === 0) {
@@ -113,7 +117,7 @@ const Cart = () => {
 
             <div className="final">
                 <h2>Total ${getTotal()}</h2>
-                <button className="btn-general"onClick={()=>finalizar()}>FINALIZAR COMPRA</button>
+                <Link to="/FinCompra"><button className="btn-general"onClick={()=>finalizar()}>FINALIZAR COMPRA</button></Link>
                 <button className="btn-general" onClick={()=>vaciaCarrito()}>Vaciar Carrito</button>
                 
             </div> </div>
